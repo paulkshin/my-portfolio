@@ -2,10 +2,49 @@ import React from "react";
 import Typewriter from "./Typewriter";
 
 export default function Intro() {
+  const textArr = [
+    {
+      firstText: "Hey there Delilah",
+      secondText: "What's it like in NYC",
+      thirdText: "i like ya cut g",
+      speed: 30,
+    },
+    {
+      firstText: "Scooby Doo",
+      secondText: "poo poo",
+      thirdText: "xD",
+      speed: 15,
+    },
+    {
+      firstText: "34v6bw345vb",
+      secondText: "e45ybe45yb",
+      thirdText: "xD",
+      speed: 50,
+    },
+    {
+      firstText: "ybw45w4yby4",
+      secondText: "yb45wyb45",
+      thirdText: "owa owa",
+      speed: 1,
+    },
+  ];
+
   return (
-    <section className="h-screen w-screen">
-      <div className="flex flex-col justify-center items-center">
-        <Typewriter
+    <section className="h-screen">
+      <div className="flex flex-col h-full justify-center items-center">
+        {textArr.map((textBlk) => {
+          return (
+            <Typewriter
+              firstText={textBlk.firstText}
+              secondText={textBlk.secondText}
+              thirdText={textBlk.thirdText}
+              speed={textBlk.speed}
+              key={textBlk.firstText}
+            />
+          );
+        })}
+
+        {/* <Typewriter
           firstText="Hey there Delilah"
           secondText="What's it like in NYC"
           thirdText="Pls c me"
@@ -16,7 +55,7 @@ export default function Intro() {
           secondText="Tacos tacos tacos"
           thirdText="oh barnacles"
           speed={10}
-        />
+        /> */}
       </div>
     </section>
   );
